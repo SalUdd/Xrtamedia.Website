@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var timer;
+  $("nav ul.menu > li > ul.submenu").hide(); // Only hide the top-level submenu on page load
   $("nav ul.menu > li").hover(function() {
     clearTimeout(timer);
     $(this).children("ul.submenu").stop(true, true).slideDown(300);
