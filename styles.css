@@ -6,8 +6,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  position: relative; /* New */
-  min-height: 100vh; /* New */
+  position: relative;
+  min-height: 100vh;
 }
 
 header {
@@ -43,10 +43,33 @@ nav ul.menu > li > a {
 
 nav ul.submenu {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed; /* Changed from absolute to fixed */
+  top: 60px; /* Adjust according to the height of your header */
   left: 0;
   background-color: #f8f9fa;
+  width: 100%; /* Full width */
+  display: flex; /* Flex layout */
+  flex-direction: row; /* Arrange items in a row */
+  align-items: flex-start; /* Align items to the start */
+  flex-wrap: wrap; /* New - allow items to wrap to next line */
+  justify-content: space-around; /* New - distribute items evenly with space around them */
+}
+
+
+nav ul.submenu > li {
+  position: relative;
+}
+
+nav ul.submenu > li > a {
+  display: block;
+}
+
+nav ul.submenu ul.submenu {
+  display: block; /* Always show */
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: transparent;
   white-space: nowrap;
 }
 
@@ -63,14 +86,14 @@ nav ul.submenu li a {
 
 main {
   padding: 20px;
-  padding-top: 60px; /* Adjust according to the height of your header */
-  min-height: calc(100vh - 120px); /* Adjust according to the height of your header and footer */
+  padding-top: 60px;
+  min-height: calc(100vh - 120px);
 }
 
 footer {
-  position: absolute; /* New */
-  bottom: 0; /* New */
-  width: 100%; /* New */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #f8f9fa;
   padding: 20px;
   text-align: center;
