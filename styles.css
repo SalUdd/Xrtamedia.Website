@@ -10,6 +10,30 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  max-width: 600px; /* Adjust this value to your liking */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.accordion-header {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: #f8f9fa;
+  border: none;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #ddd;
+  padding: 0 10px;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -27,7 +51,10 @@ header h1 {
   letter-spacing: 3px;
 
 }
-
+header h1 a {
+  color: inherit; /* Makes the link color the same as the surrounding text */
+  text-decoration: none; /* Removes underline */
+}
 nav ul.menu {
   list-style-type: none;
   display: flex;
@@ -101,11 +128,34 @@ nav ul.submenu li a {
   
 }
 
+
+
 main {
   padding: 20px;
   padding-top: 60px;
   min-height: calc(100vh - 120px);
+  margin-top: 60px;
+
 }
+
+main h1.coming-soon {
+  font-size: 4em;
+  text-align: center;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.coming-soon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+}
+
 
 footer {
   position: absolute;
