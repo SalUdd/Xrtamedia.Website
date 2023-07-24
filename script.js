@@ -8,6 +8,23 @@ $(document).ready(function() {
     var that = $(this);
     timer = setTimeout(function() {
       that.children("ul.submenu").stop(true, true).slideUp(300);
-    }, 150); // 0.15 second delay before the dropdown disappears
+    }, 100); // 0.15 second delay before the dropdown disappears
   });
 });
+
+
+window.onload = function() {
+  var accordions = document.getElementsByClassName("accordion-header");
+
+  for (var i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+};
